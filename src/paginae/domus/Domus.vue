@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 <template>
     <div class="bg-domus-navy h-screen w-screen text-white font-sans text-center flex flex-col items-center gap-12 fixed overflow-hidden">
 
+        <img class="absolute opacity-20" src="/imagines/tonitrui.png"/>
 
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold pb-60 transition-all z-10">
             <span class="text-domus-cyan">Diseño</span> Web y 

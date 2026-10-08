@@ -22,24 +22,24 @@ import {
 <template>
     <div class="batman">
 
-        <nav class="extra-nav">
-            <RouterLink to="/">
-                <House class="icon-home" />
-            </RouterLink>
+        <nav class="extra-nav flex fle-col sm:flex-row justify-between px-3">
+          <RouterLink to="/">
+              <House class="icon-home" />
+          </RouterLink>
 
-            <NavigationMenu>
-         <NavigationMenuList>
-            <NavigationMenuItem>
-               <a href="#" @click.prevent="">
-                 <NavigationMenuLink :class="navigationMenuTriggerStyle()">
-                 Portada
-                 </NavigationMenuLink>
-               </a>
+          <NavigationMenu>
+            <NavigationMenuList class="flex flex-col sm:flex-row">
+              <NavigationMenuItem>
+                 <a href="#" @click.prevent="">
+                   <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-brand-purple hover:text-white transition-colors']">
+                  Portada
+                  </NavigationMenuLink>
+                </a>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
                <a href="#" @click.prevent="">
-                 <NavigationMenuLink :class="navigationMenuTriggerStyle()">
+                 <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-brand-purple hover:text-white transition-colors']">
                  Vehículos
                  </NavigationMenuLink>
                </a>
@@ -47,7 +47,7 @@ import {
 
             <NavigationMenuItem>
                <a href="#" @click.prevent="">
-                 <NavigationMenuLink :class="navigationMenuTriggerStyle()">
+                 <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-brand-purple hover:text-white transition-colors']">
                  Imágenes
                  </NavigationMenuLink>
                </a>
@@ -55,7 +55,7 @@ import {
             
             <NavigationMenuItem>
                <a href="#" @click.prevent="">
-                 <NavigationMenuLink :class="navigationMenuTriggerStyle()">
+                 <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-brand-purple hover:text-white transition-colors']">
                  Contacto
                  </NavigationMenuLink>
                </a>

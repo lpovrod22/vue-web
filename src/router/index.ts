@@ -18,7 +18,7 @@ export const router = createRouter ({
             component: Batman
         },
         {
-            path: "/simpson",
+            path: "/simpsons",
             name: "simpsons",
             component: Primus
         },

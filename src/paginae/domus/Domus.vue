@@ -4,25 +4,34 @@ import { Button } from '@/components/ui/button'
 
 
 <template>
-    <div class="fondo-home">
+    <div class="bg-domus-navy h-screen w-screen text-white font-sans text-center flex flex-col items-center gap-12 fixed overflow-hidden">
 
-        <h1>
-            <span>Diseño</span> Web y <br> Apps <span> Interactivas</span>
+
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold pb-60 transition-all z-10">
+            <span class="text-domus-cyan">Diseño</span> Web y 
+            <br> 
+            Apps <span class="text-domus-cyan"> Interactivas</span>
         </h1>
+
+        <p class="text-lg md:text-2xl transition-all">
+            Aprendiendo a crear aplicaciones web
+        </p>
+
+
         <div class="botones">
-        <Button>
+        <Button variant="domus" class= "mr-2">
             <RouterLink to="/indecision">Sí o no</RouterLink>
         </Button>
         
-        <Button>
+        <Button variant="domus" class= "mr-2">
             <RouterLink to="/batman">Batman</RouterLink>
         </Button>
         
-        <Button>
+        <Button variant="domus" class= "mr-2">
             <RouterLink to="/simpsons">Simpsons</RouterLink>
         </Button>
         
-        <Button>
+        <Button variant="domus">
             <RouterLink to="https://www.upv.es">UPV</RouterLink>
         </Button>
         </div>
@@ -31,31 +40,8 @@ import { Button } from '@/components/ui/button'
      </div>
     
 </template>
-//br salto de pagina
-
 
 
 <style scoped>
-
-h1 {
-    font-size: 3rem;
-}
-
-.fondo-home {
-  background-color: rgb(21, 25, 52);
-  height: 100vh;
-  color: rgb(24, 182, 246);
-}
-
-
-.botones > Button {
-  margin-right: 0.5rem;
-  background-color: rgb(24, 182, 246);
-} 
-
-
-.botones > Button:hover {
-  background-color: rgba(24, 182, 246, 0.7);
-} 
 
 </style>

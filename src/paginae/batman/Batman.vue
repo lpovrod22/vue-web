@@ -196,12 +196,14 @@ import {
   max-width: 510px;
   margin: 0 auto;
   padding: 4rem 0;
+  display:flex;
+  flex-direction: column;
 }
 
-.vehiculus-arca {
+.vehiculis-arca {
+  order: 1;
   display: flex;
   flex-direction: column;
-  order: 1;
 }
 
 .vehiculis-titulus {
@@ -216,7 +218,7 @@ import {
 
 .item {
   padding: 1.5rem 0;
-  height: 500px;
+  height: 540px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -291,13 +293,13 @@ import {
     max-width: 1280px;
   }
 
-  .vehiculis-arca {
-    flex-direction: row;
-  }
-
   .item{
     flex-direction: column;
     height: 560px;
+  }
+
+  .vehiculis-arca {
+    flex-direction: row;
   }
 
   .notitia {

@@ -1,46 +1,37 @@
 <script setup lang="ts">
-import { House, Menu} from "@lucide/vue";
-import { RouterLink } from "vue-router";
 
 
-
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu'
 import Carrusimaginum from "@/components/Carrusimaginum.vue";
 import { scrollToSection } from "@/utils/scrolToSection";
-import { onMounted, onUnmounted, ref } from "vue";
-import { Toggle } from '@/components/ui/toggle'
 import { useMouseMotion } from "@/composables/useMouseMotion";
+import NavigatorPrimarius from "@/components/NavigatorPrimarius.vue";
 
 const photos = ["justice", "arkham", "superman", "varios", "villana", "villano", "grupo", "robin", "anne", "joker", "resplandor", "cat", "gafas", "league", "fondoVerde"];
 
 const {mousePosition,cumMouseMove, cumMouseLeave} = useMouseMotion()
 
-const videreMenu = ref<boolean>(true)
-
-const handleResize = () => {
- if (window.innerWidth <= 640) {
-    videreMenu.value = false;
-  } else {
-    videreMenu.value = true;
-  }
-}
-
-onMounted(() => {
-  handleResize();
-  window.addEventListener('resize', handleResize);
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', handleResize);
-})
-
-
+const menuItems = [
+  {
+    label: `Portada`,
+    href: `#`,
+    onclick: () => scrollToSection (`#`)
+  },
+  {
+    label: `Vehículos`,
+    href: `#vehiculis`,
+    onclick: () => scrollToSection (`#vehiculis`)
+  },
+   {
+    label: `Imágenes`,
+    href: `#videre`,
+    onclick: () => scrollToSection (`#videre`)
+  },
+   {
+    label: `Contacto`,
+    href: `#contactus`,
+    onclick: () => scrollToSection (`#contactus`)
+  },
+]
 
 </script>
 
@@ -48,57 +39,9 @@ onUnmounted(() => {
 <template>
     <div class="batman">
 
-      <Toggle
-        class="fixed top-2 right-4 z-50 bg-slate-500 sm:hidden"
-        @click="videreMenu = !videreMenu"
-      >
-        <Menu />
-      </Toggle>
+    <NavigatorPrimarius :items="menuItems" homeRouter="/" />
 
-        <nav v-if="videreMenu" class="extra-nav flex fle-col sm:flex-row justify-between px-3">
-          <RouterLink to="/">
-              <House class="icon-home" />
-          </RouterLink>
-
-          <NavigationMenu>
-            <NavigationMenuList class="flex flex-col sm:flex-row">
-              <NavigationMenuItem>
-                 <a href="#" @click.prevent="scrollToSection('#')">
-                   <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-brand-purple hover:text-white transition-colors']">
-                  Portada
-                  </NavigationMenuLink>
-                </a>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-               <a href="#" @click.prevent="">
-                 <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-brand-purple hover:text-white transition-colors']">
-                 Vehículos
-                 </NavigationMenuLink>
-               </a>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-               <a href="#" @click.prevent="">
-                 <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-brand-purple hover:text-white transition-colors']">
-                 Imágenes
-                 </NavigationMenuLink>
-               </a>
-            </NavigationMenuItem>
-            
-            <NavigationMenuItem>
-               <a href="#" @click.prevent="">
-                 <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-brand-purple hover:text-white transition-colors']">
-                 Contacto
-                 </NavigationMenuLink>
-               </a>
-            </NavigationMenuItem>
-            
-         </NavigationMenuList>
-        </NavigationMenu>
-   
-
-        </nav>
+     
         
 
 <header class="titulus">
@@ -169,38 +112,6 @@ onUnmounted(() => {
 .batman {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.icon-home {
-    width: 3rem;
-    height: 3rem;
-    color: slateblue;
-}
-
-.icon-home:hover {
-    color: white;
-    background-color: slateblue;
-}
-.extra-nav {
-  background-color: white;
-  opacity: 0.7;
-  box-shadow: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  top: 0;
-  width: 11rem;
-  border-radius: 0 0 1rem 0;
-  z-index: 1;
-}
-
-@media (min-width: 640px){
-  .extra-nav {
-    width: 100%;
-    border-radius: 0;
-    opacity: 1;
-    left: 0;
-  }
-}
-
-
 
 .titulus-img {
   background-size: 100% 100%;

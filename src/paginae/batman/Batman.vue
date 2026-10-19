@@ -15,17 +15,13 @@ import Carrusimaginum from "@/components/Carrusimaginum.vue";
 import { scrollToSection } from "@/utils/scrolToSection";
 import { onMounted, onUnmounted, ref } from "vue";
 import { Toggle } from '@/components/ui/toggle'
+import { useMouseMotion } from "@/composables/useMouseMotion";
 
 const photos = ["justice", "arkham", "superman", "varios", "villana", "villano", "grupo", "robin", "anne", "joker", "resplandor", "cat", "gafas", "league", "fondoVerde"];
 
-interface Coordinatas {
-  x: number
-  y: number
-}
+const {mousePosition,cumMouseMove, cumMouseLeave} = useMouseMotion()
 
 const videreMenu = ref<boolean>(true)
-
-const mousePosition = ref<Coordinatas>({ x: 0, y: 0 })
 
 const handleResize = () => {
  if (window.innerWidth <= 640) {
@@ -44,27 +40,7 @@ onUnmounted(() => {
   window.removeEventListener('resize', handleResize);
 })
 
-const cumMouseMove = (e: MouseEvent) => {
-  const rect = (e.target as HTMLElement).getBoundingClientRect()
 
-  const centerX = rect.left + rect.width / 2
-  const centerY = rect.top + rect.height / 2
-
-  const mouseX = e.clientX - rect.left
-  const mouseY = e.clientY - rect.top
-
-  mousePosition.value = {
-    x: (centerX - mouseX) * 0.1, // Ajusta la sensibilidad del movimiento
-    y: (mouseY - centerY) * 0.1
-  }
-}
-
-const cumMouseLeave = () => {
-  mousePosition.value = { 
-    x: 0, 
-    y: 0 
-  }
-}
 
 </script>
 

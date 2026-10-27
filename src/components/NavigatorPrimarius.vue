@@ -53,10 +53,10 @@ onUnmounted(() => {
         class="fixed top-2 right-4 z-50 bg-slate-500 sm:hidden"
         @click="videreMenu = !videreMenu"
       >
-        <Menu />
+        <Menu :size="46"/>
       </Toggle>
 
-        <nav v-if="videreMenu" class="extra-nav flex fle-col sm:flex-row justify-between px-3">
+        <nav v-if="videreMenu" class="extra-nav flex flex-col sm:flex-row justify-between px-3">
           <RouterLink to="homeRouter">
               <House class="icon-home" />
           </RouterLink>

@@ -238,7 +238,7 @@ const mittereSubmit = async () => {
                     <span v-if="dies">
                       {{dies.day}}/{{ dies.month}}/{{ dies.year}}
                     </span>
-                    <span v-else clase="text-gray-500">
+                    <span v-else class="text-gray-500">
                       Selecciona una fecha
                     </span>
                   </Button>
@@ -252,7 +252,7 @@ const mittereSubmit = async () => {
           <Button 
           type="submit"
           class="w-full bg-brand-purple hover:bg-brand-purple-dark"
-          :disablet="estLoading"
+          :disabled="estLoading"
           >
             <Loader2 v-if="estLoading" class="mr-2 h-4 w-4 animate-spin" />
             <span v-if="estLoading">Enviando...</span>
@@ -310,7 +310,7 @@ const mittereSubmit = async () => {
     </div>
 </template>
 
-<style scooped>
+<style scoped>
 .batman {
   font-family: Arial, Helvetica, sans-serif;
 }

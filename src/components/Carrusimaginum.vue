@@ -42,7 +42,7 @@ const props = withDefaults(defineProps<Props>(), {
     <CarouselContent>
       <CarouselItem v-for="(photo, index) in props.photos" :key="index">
         <div class="p-1">
-          <Card class="bg-grat-900 border-none">
+          <Card class="bg-gray-900 border-none">
             <CardContent class="flex aspect-6/4 items-center justify-center p-6">
               <img 
               :src="`${props.basePath}/${photo}.jpg`" 
@@ -54,8 +54,8 @@ const props = withDefaults(defineProps<Props>(), {
         </div>
       </CarouselItem>
     </CarouselContent>
-    <CarouselPrevious class="hiccen md:flex  bg-gray-900 text-white"/>
-    <CarouselNext class="hiccen md:flex  bg-gray-900 text-white" />
+    <CarouselPrevious class="hidden md:flex  bg-gray-900 text-white"/>
+    <CarouselNext class="hidden md:flex  bg-gray-900 text-white" />
   </Carousel>
 </template>
 

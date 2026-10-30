@@ -57,7 +57,7 @@ onUnmounted(() => {
       </Toggle>
 
         <nav v-if="videreMenu" class="extra-nav flex flex-col sm:flex-row justify-between px-3">
-          <RouterLink to="homeRouter">
+          <RouterLink :to="homeRouter">
               <House class="icon-home" />
           </RouterLink>
 

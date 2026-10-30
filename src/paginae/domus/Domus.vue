@@ -32,8 +32,8 @@ import { Button } from '@/components/ui/button'
                 <RouterLink to="/simpsons">Simpsons</RouterLink>
             </Button>
         
-            <Button variant="domus">
-                <RouterLink to="https://www.upv.es">UPV</RouterLink>
+            <Button variant="domus" class="mr-2" >
+                <a href="https://www.upv.es">UPV</a>
             </Button>
         </div>
 
